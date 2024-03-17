@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import fan from '../images/fan.svg'
 
 export default function FabCard() {
   const [speed, setSpeed] = useState(0)
@@ -51,7 +52,7 @@ export default function FabCard() {
             alt="fan image"
             className="rounded-full"
             height={150}
-            src="/placeholder.svg"
+            src={fan}
             style={{
               aspectRatio: '150/150',
               objectFit: 'cover',

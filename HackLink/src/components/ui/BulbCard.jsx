@@ -1,4 +1,5 @@
 import { useState } from "react";
+import bulb from '../images/bulb.svg'
 
 export default function BulbCard() {
   const [bulbOn , setBulbOn]= useState(false)
@@ -38,7 +39,7 @@ return (
         alt="Light Bulb"
         className="rounded-full"
         height={150}
-        src="/placeholder.svg"
+        src={bulb}
         style={{
           aspectRatio: "150/150",
           objectFit: "cover",
