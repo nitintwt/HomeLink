@@ -1,5 +1,6 @@
 
 import { useState } from "react"
+import led from '../images/led.svg'
 export default function LedCard() {
 
 const [value, setValue] = useState("#000000")
@@ -48,7 +49,7 @@ const change = (e) => {
             alt="LED"
             className="rounded-full"
             height={150}
-            src="/placeholder.svg"
+            src={led}
             style={{
               aspectRatio: "150/150",
               objectFit: "cover",
