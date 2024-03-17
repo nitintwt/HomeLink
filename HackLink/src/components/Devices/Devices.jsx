@@ -2,6 +2,7 @@ import React from 'react'
 
 import BulbCard from '../ui/BulbCard'
 import FanCard from '../ui/FanCard'
+import ACCard from '../ui/ACCard'
 
 function Devices() {
   return (
@@ -13,6 +14,9 @@ function Devices() {
       </div>
       <div>
         <FanCard/>
+      </div>
+      <div>
+        <ACCard/>
       </div>
     </div>
   </div>
