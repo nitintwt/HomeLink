@@ -1,5 +1,5 @@
 import React from 'react'
-import DeviceCard from '../ui/DeviceCard'
+
 import BulbCard from '../ui/BulbCard'
 import FanCard from '../ui/FanCard'
 
