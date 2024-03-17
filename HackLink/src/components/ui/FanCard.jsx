@@ -1,12 +1,43 @@
 import { useState } from 'react';
-import FanBtn from './fanBtn';
 
 export default function FabCard() {
   const [speed, setSpeed] = useState(0)
 
-  const increaseSpeed = () => {
-    setSpeed(speed + 1)
+   const speedcontrol = ()=>{
+    let data = {
+      "teamid": "HeS01Nv",
+      "device": "fan",
+      "value":  speed
   };
+  //DEVICE CONTROL
+  const api = async (data) => {
+      const api2 = await fetch('https://kodessphere-api.vercel.app/devices', {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+      });
+      let data2 = await api2.json();
+      console.log(data2);
+  };
+  
+  api(data);
+   }
+
+  const increaseSpeed = async () => {
+    if(speed<5) {
+      await setSpeed(speed + 1)
+    }
+    await speedcontrol();
+  };
+
+  const decreaseSpeed = async () =>{
+    if(speed>0) {
+      await setSpeed(speed - 1);
+    }
+    await speedcontrol();
+  }
 
   return (
     <div className="w-full max-w-sm rounded-lg border text-white bg-black">
@@ -34,12 +65,12 @@ export default function FabCard() {
             <PlusIcon className="h-4 w-4" />
             Plus
           </button>
-          <button className="px-2.5 flex items-center gap-2" shape="round" size="lg" variant="outline">
+          <button className="px-2.5 flex items-center gap-2" shape="round" size="lg" variant="outline" onClick={decreaseSpeed}>
             <MinusIcon className="h-4 w-4" />
             Minus
           </button>
         </div>
-          <div className="text-white bg-gray-600 hover:bg-gray-700 px-4 py-2 rounded-md focus:outline-none" onClick={decreaseSpeed}>{speed}</div>
+          <div className="text-white bg-gray-600 hover:bg-gray-700 px-4 py-2 rounded-md focus:outline-none" >{speed}</div>
         </div>
       </div>
       </div>

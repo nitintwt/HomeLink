@@ -9,7 +9,7 @@ export default function BulbCard() {
     let data = {
       "teamid": "HeS01Nv",
       "device": "bulb",
-      "value":  bulbOn? "1": "0"// Remove the comma here if it's the last property
+      "value":  bulbOn? "0": "1"// Remove the comma here if it's the last property
   };
   //DEVICE CONTROL
   const api = async (data) => {
